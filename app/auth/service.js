@@ -5,6 +5,7 @@ export default Ember.Service.extend({
   ajax: Ember.inject.service(),
   credentials: storageFor('auth'),
   isAuthenticated: Ember.computed.bool('credentials.token'),
+  // isTeacher: Ember.computed.bool('credentials.profileable_type' === 'Teacher'),
 
   signUp (credentials) {
     return this.get('ajax').post('/sign-up', {
@@ -28,9 +29,11 @@ export default Ember.Service.extend({
       },
     })
     .then((result) => {
+      console.log(result);
       this.get('credentials').set('id', result.user.id);
       this.get('credentials').set('email', result.user.email);
       this.get('credentials').set('token', result.user.token);
+      this.get('credentials').set('profileable_type', result.user.profileable_type);
     });
   },
 
