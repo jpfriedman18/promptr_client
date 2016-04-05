@@ -1,5 +1,7 @@
 <hr>
 <p>{{prompt.title}}</p>
+{{!-- <button {{action 'updatePrompt'}}>EDIT</button> --}}
 {{#if showText}}
   <p>{{prompt.text}}</p>
 {{/if}}
+<button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
