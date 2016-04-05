@@ -12,6 +12,7 @@ Router.map(function () {
   this.route('users');
   this.route('teacher-landing');
   this.route('student-landing');
+  this.route('create-prompt');
 });
 
 export default Router;
