@@ -1,12 +1,20 @@
 <hr>
-{{#unless isEditable}}
-<p>{{prompt.title}}</p>
-<p>{{prompt.text}}</p>
-<button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
-<button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+{{#if isTeacher}}
+
+  {{#unless isEditable}}
+  <p>{{prompt.title}}</p>
+  <p>{{prompt.text}}</p>
+  <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
+  <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+  {{else}}
+  <p>{{input value=prompt.title}}</p>
+  <p>{{input value=prompt.text}}</p>
+  <button class="btn btn-info btn-xs"{{action 'updatePrompt'}}>Submit Changes</button>
+  <button class="btn btn-secondary btn-xs" {{action 'toggleEditable'}}>Cancel</button>
+  {{/unless}}
+
 {{else}}
-<p>{{input value=prompt.title}}</p>
-<p>{{input value=prompt.text}}</p>
-<button class="btn btn-info btn-xs"{{action 'updatePrompt'}}>Submit Changes</button>
-<button class="btn btn-secondary btn-xs" {{action 'toggleEditable'}}>Cancel</button>
-{{/unless}}
+  <p>{{prompt.title}}</p>
+  <p>{{prompt.text}}</p>
+  <button class="btn btn-info btn-xs">Write a Response</button>
+{{/if}}

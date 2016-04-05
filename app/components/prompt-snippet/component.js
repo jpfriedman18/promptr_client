@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isEditable: false,
+  auth: Ember.inject.service(),
+  isTeacher: Ember.computed.alias('auth.isTeacher'),
   actions: {
     updatePrompt: function(){
       this.sendAction('updatePrompt', this.get('prompt'));
