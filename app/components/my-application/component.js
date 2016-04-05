@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   user: Ember.computed.alias('auth.credentials.email'),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
-  // isTeacher: Ember.computed.bool('credentials.profileable_type' === 'Teacher'),
+  isTeacher: Ember.computed.alias('auth.isTeacher'),
 
   actions: {
     signOut () {
