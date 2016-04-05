@@ -1,7 +1,12 @@
 <hr>
+{{#unless isEditable}}
 <p>{{prompt.title}}</p>
-{{!-- <button {{action 'updatePrompt'}}>EDIT</button> --}}
-{{#if showText}}
-  <p>{{prompt.text}}</p>
-{{/if}}
+<p>{{prompt.text}}</p>
+<button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
 <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+{{else}}
+<p>{{input value=prompt.title}}</p>
+<p>{{input value=prompt.text}}</p>
+<button class="btn btn-info btn-xs"{{action 'updatePrompt'}}>Submit Changes</button>
+<button class="btn btn-secondary btn-xs" {{action 'toggleEditable'}}>Cancel</button>
+{{/unless}}
