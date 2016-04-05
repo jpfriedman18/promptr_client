@@ -1,0 +1,5 @@
+{{#each model.prompt as |eachPrompt|}}
+  {{prompt-snippet prompt=eachPrompt
+                    destroyPrompt='destroyPrompt'}}
+{{/each}}
+<h5>{{#link-to "teacher-landing"}}Back{{/link-to}}</h5>

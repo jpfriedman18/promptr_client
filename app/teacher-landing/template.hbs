@@ -1,7 +1,3 @@
 <h3>Hello Teacher!</h3>
 <h5>{{#link-to "create-prompt"}}Create A Prompt{{/link-to}}</h5>
-
-{{#each model.prompt as |eachPrompt|}}
-  {{prompt-snippet prompt=eachPrompt
-                    destroyPrompt='destroyPrompt'}}
-{{/each}}
+<h5>{{#link-to "prompts"}}My Prompts{{/link-to}}</h5>
