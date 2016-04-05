@@ -1,5 +1,5 @@
 <h3>Hello Teacher!</h3>
-{{prompt-form createPrompt='createPrompt'}}
+<h5>{{#link-to "create-prompt"}}Create A Prompt{{/link-to}}</h5>
 
 {{#each model.prompt as |eachPrompt|}}
   {{prompt-snippet prompt=eachPrompt
