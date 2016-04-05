@@ -1,2 +1,6 @@
 <h3>Hello Teacher!</h3>
 {{prompt-form createPrompt='createPrompt'}}
+
+{{#each model.prompt as |eachPrompt|}}
+  {{prompt-snippet prompt=eachPrompt}}
+{{/each}}

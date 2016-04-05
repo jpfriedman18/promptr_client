@@ -1,9 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  model: function(){
+    return {
+      prompt: this.store.findAll('prompt'),
+    };
+  },
   actions: {
     createPrompt: function(properties){
-      console.log("Route action");
       this.store.createRecord('prompt', properties)
         .save().then(()=>console.log('prompt created'));
     }
