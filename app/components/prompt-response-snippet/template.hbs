@@ -1,7 +1,12 @@
 <hr>
 {{#if isTeacher}}
   <p>Student response: {{promptResponse.text}}</p>
-  <button class="btn btn-success btn-xs">Evaluate</button>
+  {{#unless evaluating}}
+    <button class="btn btn-success btn-xs" {{action 'toggleEvaluating'}}>Evaluate</button>
+  {{else}}
+    {{evaluation-form promptResponse=promptResponse createEvaluation='createEvaluation'}}
+    <button class="btn btn-secondary btn-xs" {{action 'toggleEvaluating'}}>Cancel</button>
+  {{/unless}}
 {{else}}
   <p>Prompt: {{promptResponse.prompt.text}}</p>
   <p>Your response: {{promptResponse.text}}</p>
