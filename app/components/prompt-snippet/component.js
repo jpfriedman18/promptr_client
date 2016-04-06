@@ -26,9 +26,8 @@ export default Ember.Component.extend({
     showResponses: function(){
       this.toggleProperty('showResponses');
     },
-    logPromptResponses: function(){
-      let responses = this.get('prompt.promptResponses');
-      console.log(responses);
-    }
+    createEvaluation: function(evaluation){
+      this.sendAction('createEvaluation', evaluation);
+    },
   },
 });

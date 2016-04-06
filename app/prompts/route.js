@@ -17,10 +17,14 @@ export default Ember.Route.extend({
       .then(()=>console.log("prompt destroyed"));
     },
     createPromptResponse: function(promptResponse){
-      console.log(promptResponse);
       this.get('store').createRecord('prompt_response', promptResponse)
         .save().then(()=>console.log('response created'))
         .then(()=> this.transitionTo('student-landing'));
+    },
+    createEvaluation: function(evaluation){
+      console.log(evaluation);
+      this.get('store').createRecord('evaluation', evaluation)
+        .save().then(()=> console.log('evaluation created'));
     }
   }
 });

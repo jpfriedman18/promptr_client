@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   actions: {
     toggleEvaluating: function(){
       this.toggleProperty('evaluating');
+    },
+    createEvaluation: function(evaluation){
+      this.sendAction('createEvaluation', evaluation);
     }
   },
 });
