@@ -4,9 +4,16 @@
   {{#unless isEditable}}
   <p>{{prompt.title}}</p>
   <p>{{prompt.text}}</p>
-  <button class="btn btn-success btn-xs" {{action 'logPromptResponses'}}>Show Responses</button>
-  <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
-  <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+  {{#unless showResponses}}
+    <button class="btn btn-success btn-xs" {{action 'showResponses'}}>Show Responses</button>
+    <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
+    <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+  {{else}}
+    {{#each prompt.promptResponses as |eachPromptResponse|}}
+      {{prompt-response-snippet promptResponse=eachPromptResponse}}
+    {{/each}}
+    <button class="btn btn-secondary btn-xs" {{action 'showResponses'}}>Cancel</button>
+  {{/unless}}
   {{else}}
   <p>{{input value=prompt.title}}</p>
   <p>{{input value=prompt.text}}</p>

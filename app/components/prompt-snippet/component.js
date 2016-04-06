@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isEditable: false,
+  showResponses: false,
   responding: false,
   auth: Ember.inject.service(),
   isTeacher: Ember.computed.alias('auth.isTeacher'),
@@ -22,8 +23,11 @@ export default Ember.Component.extend({
     createPromptResponse: function(promptResponse){
       this.sendAction('createPromptResponse', promptResponse);
     },
+    showResponses: function(){
+      this.toggleProperty('showResponses');
+    },
     logPromptResponses: function(){
-      let responses = this.get('prompt.promptResponses')
+      let responses = this.get('prompt.promptResponses');
       console.log(responses);
     }
   },
