@@ -4,7 +4,7 @@
   {{#unless isEditable}}
   <p>{{prompt.title}}</p>
   <p>{{prompt.text}}</p>
-  <button class="btn btn-success btn-xs">Show Responses</button>
+  <button class="btn btn-success btn-xs" {{action 'logPromptResponses'}}>Show Responses</button>
   <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
   <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
   {{else}}

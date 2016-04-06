@@ -6,9 +6,6 @@ export default Ember.Component.extend({
   auth: Ember.inject.service(),
   isTeacher: Ember.computed.alias('auth.isTeacher'),
   actions: {
-    printId: function(){
-      console.log(this.get('prompt.id'));
-    },
     updatePrompt: function(){
       this.sendAction('updatePrompt', this.get('prompt'));
       this.set('isEditable', false);
@@ -25,5 +22,9 @@ export default Ember.Component.extend({
     createPromptResponse: function(promptResponse){
       this.sendAction('createPromptResponse', promptResponse);
     },
+    logPromptResponses: function(){
+      let responses = this.get('prompt.promptResponses')
+      console.log(responses);
+    }
   },
 });
