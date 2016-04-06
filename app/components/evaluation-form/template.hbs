@@ -6,5 +6,4 @@
   <p>Creativity: {{input placeholder='Creativity (1-10)' value=form.creativity}}</p>
   <p>Notes: {{input placeholder='Notes' value=form.notes}}</p>
 </div>
-<button class="btn btn-success"> Submit </button>
-{{!-- {{action 'createPromptResponse'}} --}}
+<button class="btn btn-success" {{action 'createEvaluation'}}> Submit </button>
