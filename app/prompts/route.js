@@ -14,6 +14,11 @@ export default Ember.Route.extend({
     destroyPrompt: function(prompt){
       prompt.destroyRecord()
       .then(()=>console.log("prompt destroyed"));
+    },
+    createPromptResponse: function(promptResponse){
+      this.store.createRecord('prompt_response', promptResponse)
+        .save().then(()=>console.log('response created'))
+        .then(()=> this.transitionTo('student-landing'));
     }
   }
 });

@@ -1,7 +1,8 @@
 {{#each model.prompt as |eachPrompt|}}
   {{prompt-snippet prompt=eachPrompt
                     updatePrompt='updatePrompt'
-                    destroyPrompt='destroyPrompt'}}
+                    destroyPrompt='destroyPrompt'
+                    createPromptResponse='createPromptResponse'}}
 {{/each}}
 
 {{return-button}}
