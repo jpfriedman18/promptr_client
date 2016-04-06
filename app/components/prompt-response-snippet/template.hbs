@@ -1,3 +1,8 @@
 <hr>
-<p>Prompt: {{promptResponse.prompt.text}}</p>
-<p>Your response: {{promptResponse.text}}</p>
+{{#if isTeacher}}
+  <p>Student response: {{promptResponse.text}}</p>
+  <button class="btn btn-success btn-xs">Evaluate</button>
+{{else}}
+  <p>Prompt: {{promptResponse.prompt.text}}</p>
+  <p>Your response: {{promptResponse.text}}</p>
+{{/if}}
