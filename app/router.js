@@ -15,6 +15,7 @@ Router.map(function () {
   this.route('create-prompt');
   this.route('prompts');
   this.route('student-prompt-responses');
+  this.route('student-evaluations');
 });
 
 export default Router;
