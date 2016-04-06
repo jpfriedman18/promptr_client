@@ -1,5 +1,4 @@
-<button class="btn btn-danger btn-xs" {{action 'logEvaluations'}}>log evaluations</button>
-
+<h2>My Evaluations</h2>
 {{#each model.evaluation as |eachEvaluation|}}
   {{evaluation-snippet evaluation=eachEvaluation}}
 {{/each}}
