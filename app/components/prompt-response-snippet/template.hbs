@@ -1,3 +1,4 @@
 <hr>
-<p>{{promptResponse.text}}</p>
+<p>Prompt: {{promptResponse.prompt.text}}</p>
+<p>Your response: {{promptResponse.text}}</p>
 <button class="btn btn-info btn-xs" {{action 'logPrompt'}}>Log prompt</button>

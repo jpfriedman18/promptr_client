@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function(){
     return {
-      prompt: this.store.findAll('prompt'),
+      prompt: this.get('store').findAll('prompt'),
+      promptResponse: this.get('store').findAll('prompt_response'),
     };
   },
   actions: {
