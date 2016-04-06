@@ -19,7 +19,7 @@
   {{#unless responding}}
     <button class="btn btn-info btn-xs" {{action 'toggleResponding'}}>Write a Response</button>
   {{else}}
-    {{prompt-response-form prompt_id=prompt.id createPromptResponse='createPromptResponse'}}
+    {{prompt-response-form prompt=prompt createPromptResponse='createPromptResponse'}}
     <button class="btn btn-secondary btn-xs" {{action 'toggleResponding'}}>Cancel</button>
   {{/unless}}
 {{/if}}
