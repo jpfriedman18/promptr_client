@@ -1,6 +1,19 @@
 {{email-input email=credentials.email}}
 {{password-input password=credentials.password}}
 {{password-confirmation-input password=credentials.passwordConfirmation}}
+<label for="name">Name</label>
+{{input class="form-group" placeholder="Name" value=credentials.name}}
+
+<p>I am a:
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary btn-sm" {{action "setTeacher"}}>
+    <input type="radio" autocomplete="off">Teacher
+  </label>
+  <label class="btn btn-success btn-sm" {{action "setStudent"}}>
+    <input type="radio" autocomplete="off">Student
+  </label>
+</div>
+</p>
 
 <button type="submit" class="btn btn-primary" {{action "submit"}}>
   Sign Up
