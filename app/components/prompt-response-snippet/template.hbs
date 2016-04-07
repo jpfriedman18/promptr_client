@@ -1,6 +1,6 @@
 <hr>
 {{#if isTeacher}}
-  <p>Student response: {{promptResponse.text}}</p>
+  <p>{{promptResponse.student.name}}'s response: {{promptResponse.text}}</p>
   {{#unless evaluating}}
     <button class="btn btn-success btn-xs" {{action 'toggleEvaluating'}}>Evaluate</button>
   {{else}}
