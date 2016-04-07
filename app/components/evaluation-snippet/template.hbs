@@ -6,3 +6,11 @@ Structure: {{evaluation.structure}}
 Spelling: {{evaluation.spelling}}
 Creativity: {{evaluation.creativity}}</p>
 <p>Notes: {{evaluation.notes}}</p>
+{{#if isTeacher}}
+  {{#unless showResponseText}}
+    <button class="btn btn-info btn-xs" {{action 'toggleShowResponseText'}}>Show Response</button>
+  {{else}}
+    <p>Response: {{evaluation.promptResponse.text}}</p>
+    <button class="btn btn-secondary btn-xs" {{action 'toggleShowResponseText'}}>Hide Response</button>
+  {{/unless}}
+{{/if}}
