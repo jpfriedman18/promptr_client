@@ -7,5 +7,6 @@ export default DS.Model.extend({
   spelling: DS.attr('number'),
   creativity: DS.attr('number'),
   notes: DS.attr('string'),
-  promptResponse: DS.belongsTo('prompt-response', {async: true})
+  promptResponse: DS.belongsTo('prompt-response', {async: true}),
+  teacher: DS.belongsTo('teacher', {async: true})
 });
