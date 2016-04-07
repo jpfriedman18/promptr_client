@@ -2,8 +2,8 @@
 {{#if isTeacher}}
 
   {{#unless isEditable}}
-    <p>{{prompt.title}}</p>
-    <p>{{prompt.text}}</p>
+    <p>Title: {{prompt.title}}</p>
+    <p>Prompt: {{prompt.text}}</p>
     {{#unless showResponses}}
       <button class="btn btn-success btn-xs" {{action 'showResponses'}}>Show Responses</button>
       <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
@@ -22,8 +22,9 @@
   {{/unless}}
 
 {{else}}
-  <p>{{prompt.title}}</p>
-  <p>{{prompt.text}}</p>
+  <p>Teacher: {{prompt.teacher.name}}</p>
+  <p>Title: {{prompt.title}}</p>
+  <p>Prompt: {{prompt.text}}</p>
   {{#unless responding}}
     <button class="btn btn-info btn-xs" {{action 'toggleResponding'}}>Write a Response</button>
   {{else}}
