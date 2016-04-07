@@ -36,6 +36,7 @@ export default Ember.Service.extend({
       this.get('credentials').set('email', result.user.email);
       this.get('credentials').set('token', result.user.token);
       this.get('credentials').set('profileable_type', result.user.profileable_type);
+      this.get('credentials').set('name', result.user.name);
     });
   },
 
