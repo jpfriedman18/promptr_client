@@ -1,12 +1,14 @@
 <div class="index">
   <h1>Welcome to Promptr!</h1>
   <h5>Promptr is a simple, easy-to-use teacher tool for assigning, collecting, and evaluating writing assignments.</h5>
-
-  <h3>New Here?</h3>
-  <button type="button" class="btn btn-primary">Sign Up</button>
-
-  <h3>Already have a Teacher or Student Account?</h3>
-  <button type="button" class="btn btn-success">Sign In</button>
+  <div class="col-md-4">
+    <h3>New Here?</h3>
+    <button type="button" class="btn btn-primary">{{#link-to "sign-up"}}Sign Up{{/link-to}}</button>
+  </div>
+  <div class="col-md-4">
+    <h3>Have an Account?</h3>
+    <button type="button" class="btn btn-success">{{#link-to "sign-in"}}Sign In{{/link-to}}</button>
+  </div>
 </div>
 
 {{outlet}}
