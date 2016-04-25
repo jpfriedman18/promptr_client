@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     {{navbar-header}}
 
@@ -15,8 +15,6 @@
     </div>
   </div>
 </nav>
-
-<h1>Promptr</h1>
 
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
