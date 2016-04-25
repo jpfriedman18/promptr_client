@@ -1,8 +1,20 @@
 @import 'bootstrap';
 @import 'bootstrap/theme';
 
+.navbar {
+  margin-bottom: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
 .index {
   text-align: center;
+  background-image: url("https://s3.amazonaws.com/jamrs-bucket/books-education-school-literature-48126.jpeg");
+  background-size: cover;
+  background-position: center center;
+  min-height: 675px;
 }
 
 .index h5 {
@@ -19,4 +31,8 @@
 
 .index-sign-in {
   padding-top: 20px;
+}
+
+.index a {
+  color: white;
 }
