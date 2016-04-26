@@ -1,14 +1,14 @@
 <div class="evaluation-container">
   {{#if isTeacher}}
-  <p>Prompt: {{evaluation.promptResponse.prompt.title}}</p>
+  <h5>Prompt: {{evaluation.promptResponse.prompt.title}}</h5>
   <p>Evaluation for {{evaluation.promptResponse.student.name}}</p>
   {{else}}
-  <p>{{evaluation.teacher.name}}'s Prompt: {{evaluation.promptResponse.prompt.title}}</p>
+  <h5>{{evaluation.teacher.name}}'s Prompt: {{evaluation.promptResponse.prompt.title}}</h5>
   {{/if}}
   <p>Grammar: {{evaluation.grammar}} |
   Vocabulary: {{evaluation.vocabulary}} |
-  Structure: {{evaluation.structure}} | 
-  Spelling: {{evaluation.spelling}} | 
+  Structure: {{evaluation.structure}} |
+  Spelling: {{evaluation.spelling}} |
   Creativity: {{evaluation.creativity}}</p>
   <p>Notes: {{evaluation.notes}}</p>
   {{#if isTeacher}}
