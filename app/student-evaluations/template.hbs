@@ -1,12 +1,14 @@
-<h2>My Evaluations</h2>
-<p>Average Grammar Score: {{averageGrammar model.evaluations model.evaluations.length}}</p>
-<p>Average Vocabulary Score: {{averageVocabulary model.evaluations model.evaluations.length}}</p>
-<p>Average Structure Score: {{averageStructure model.evaluations model.evaluations.length}}</p>
-<p>Average Spelling Score: {{averageSpelling model.evaluations model.evaluations.length}}</p>
-<p>Average Creativity Score: {{averageGrammar model.evaluations model.evaluations.length}}</p>
+<div class="col-md-8 col-md-offset-2">
+  <h2>My Evaluations</h2>
+  <p>Average Grammar Score: {{averageGrammar model.evaluations model.evaluations.length}}</p>
+  <p>Average Vocabulary Score: {{averageVocabulary model.evaluations model.evaluations.length}}</p>
+  <p>Average Structure Score: {{averageStructure model.evaluations model.evaluations.length}}</p>
+  <p>Average Spelling Score: {{averageSpelling model.evaluations model.evaluations.length}}</p>
+  <p>Average Creativity Score: {{averageGrammar model.evaluations model.evaluations.length}}</p>
 
-{{#each model.evaluations as |eachEvaluation|}}
-  {{evaluation-snippet evaluation=eachEvaluation}}
-{{/each}}
+  {{#each model.evaluations as |eachEvaluation|}}
+    {{evaluation-snippet evaluation=eachEvaluation}}
+  {{/each}}
 
-{{return-button}}
+  {{return-button}}
+</div>

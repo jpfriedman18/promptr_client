@@ -1,6 +1,8 @@
-<h2>My Evaluations</h2>
-{{#each model.evaluation as |eachEvaluation|}}
-  {{evaluation-snippet evaluation=eachEvaluation}}
-{{/each}}
+<div class="col-md-8 col-md-offset-2">
+  <h2>My Evaluations</h2>
+  {{#each model.evaluation as |eachEvaluation|}}
+    {{evaluation-snippet evaluation=eachEvaluation}}
+  {{/each}}
 
-{{return-button}}
+  {{return-button}}
+</div>

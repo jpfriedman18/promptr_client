@@ -1,9 +1,11 @@
-{{#each model.prompt as |eachPrompt|}}
-  {{prompt-snippet prompt=eachPrompt
-                    updatePrompt='updatePrompt'
-                    destroyPrompt='destroyPrompt'
-                    createPromptResponse='createPromptResponse'
-                    createEvaluation='createEvaluation'}}
-{{/each}}
+<div class="col-md-8 col-md-offset-2">
+  {{#each model.prompt as |eachPrompt|}}
+    {{prompt-snippet prompt=eachPrompt
+                      updatePrompt='updatePrompt'
+                      destroyPrompt='destroyPrompt'
+                      createPromptResponse='createPromptResponse'
+                      createEvaluation='createEvaluation'}}
+  {{/each}}
 
-{{return-button}}
+  {{return-button}}
+</div>

@@ -1,7 +1,9 @@
-<p>Your Responses:</p>
+<div class="col-md-8 col-md-offset-2">
+  <p>Your Responses:</p>
 
-{{#each model.promptResponse as |eachPromptResponse|}}
-  {{prompt-response-snippet promptResponse=eachPromptResponse}}
-{{/each}}
+  {{#each model.promptResponse as |eachPromptResponse|}}
+    {{prompt-response-snippet promptResponse=eachPromptResponse}}
+  {{/each}}
 
-{{return-button}}
+  {{return-button}}
+</div>
