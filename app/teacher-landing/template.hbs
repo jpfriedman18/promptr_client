@@ -1,6 +1,12 @@
 <div class="col-md-8 col-md-offset-2">
   {{landing-greeting}}
-  <h4>{{#link-to "create-prompt"}}Create A Prompt{{/link-to}}</h4>
-  <h4>{{#link-to "prompts"}}My Prompts{{/link-to}}</h4>
-  <h4>{{#link-to "teacher-evaluations"}}My Evaluations{{/link-to}}</h4>
+  <div class="col-md-4 create-prompt-link">
+    <h4>{{#link-to "create-prompt"}}Create A Prompt{{/link-to}}</h4>
+  </div>
+  <div class="col-md-4 list-prompts-link">
+    <h4>{{#link-to "prompts"}}My Prompts{{/link-to}}</h4>
+  </div>
+  <div class="col-md-4 teacher-evaluations-link">
+    <h4>{{#link-to "teacher-evaluations"}}My Evaluations{{/link-to}}</h4>
+  </div>
 </div>
