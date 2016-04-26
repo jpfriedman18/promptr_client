@@ -1,6 +1,6 @@
-<h4> Make a Prompt! </h4>
-<div>
-  {{input placeholder='Title' value=form.title}}
-  {{input placeholder='Text' value=form.text}}
+<h3 class="page-title">Make a Prompt!</h3>
+<div class="create-prompt-form">
+  <p>{{input placeholder='Title' value=form.title}}</p>
+  <p>{{input placeholder='Text' value=form.text}}</p>
+  <button class="btn btn-success" {{action 'createPrompt'}}> Submit </button>
 </div>
-<button class="btn btn-success" {{action 'createPrompt'}}> Submit </button>
