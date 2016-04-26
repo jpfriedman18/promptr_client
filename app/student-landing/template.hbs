@@ -1,6 +1,15 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2 landing-page">
   {{landing-greeting}}
-  <h5>{{#link-to "prompts"}}Prompts{{/link-to}}</h5>
-  <h5>{{#link-to "student-prompt-responses"}}My Responses{{/link-to}}</h5>
-  <h5>{{#link-to "student-evaluations"}}My Evaluations{{/link-to}}</h5>
+  <div class="col-md-4 landing-link list-prompts-link">
+    <i class="fa fa-book fa-5x" aria-hidden="true"></i>
+    <h3>{{#link-to "prompts"}}Prompts{{/link-to}}</h3>
+  </div>
+  <div class="col-md-4 landing-link student-responses-link">
+    <i class="fa fa-pencil fa-5x" aria-hidden="true"></i>
+    <h3>{{#link-to "student-prompt-responses"}}My Responses{{/link-to}}</h3>
+  </div>
+  <div class="col-md-4 landing-link student-evaluations-link">
+    <i class="fa fa-tachometer fa-5x" aria-hidden="true"></i>
+    <h3>{{#link-to "student-evaluations"}}My Evaluations{{/link-to}}</h3>
+  </div>
 </div>
