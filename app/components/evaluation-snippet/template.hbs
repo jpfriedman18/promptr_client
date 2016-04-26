@@ -1,20 +1,21 @@
 <div class="evaluation-container">
   {{#if isTeacher}}
   <p>Prompt: {{evaluation.promptResponse.prompt.title}}</p>
+  <p>Evaluation for {{evaluation.promptResponse.student.name}}</p>
   {{else}}
   <p>{{evaluation.teacher.name}}'s Prompt: {{evaluation.promptResponse.prompt.title}}</p>
   {{/if}}
-  <p>Grammar: {{evaluation.grammar}}
-  Vocabulary: {{evaluation.vocabulary}}
-  Structure: {{evaluation.structure}}
-  Spelling: {{evaluation.spelling}}
+  <p>Grammar: {{evaluation.grammar}} |
+  Vocabulary: {{evaluation.vocabulary}} |
+  Structure: {{evaluation.structure}} | 
+  Spelling: {{evaluation.spelling}} | 
   Creativity: {{evaluation.creativity}}</p>
   <p>Notes: {{evaluation.notes}}</p>
   {{#if isTeacher}}
     {{#unless showResponseText}}
       <button class="btn btn-info btn-xs" {{action 'toggleShowResponseText'}}>Show Response</button>
     {{else}}
-      <p>{{evaluation.promptResponse.student.name}}'s Response: {{evaluation.promptResponse.text}}</p>
+      <p>Response: {{evaluation.promptResponse.text}}</p>
       <button class="btn btn-secondary btn-xs" {{action 'toggleShowResponseText'}}>Hide Response</button>
     {{/unless}}
   {{/if}}
