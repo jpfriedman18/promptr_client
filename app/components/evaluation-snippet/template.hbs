@@ -1,5 +1,9 @@
 <div class="evaluation-container">
+  {{#if isTeacher}}
+  <p>Prompt: {{evaluation.promptResponse.prompt.title}}</p>
+  {{else}}
   <p>{{evaluation.teacher.name}}'s Prompt: {{evaluation.promptResponse.prompt.title}}</p>
+  {{/if}}
   <p>Grammar: {{evaluation.grammar}}
   Vocabulary: {{evaluation.vocabulary}}
   Structure: {{evaluation.structure}}
@@ -10,7 +14,7 @@
     {{#unless showResponseText}}
       <button class="btn btn-info btn-xs" {{action 'toggleShowResponseText'}}>Show Response</button>
     {{else}}
-      <p>Response: {{evaluation.promptResponse.text}}</p>
+      <p>{{evaluation.promptResponse.student.name}}'s Response: {{evaluation.promptResponse.text}}</p>
       <button class="btn btn-secondary btn-xs" {{action 'toggleShowResponseText'}}>Hide Response</button>
     {{/unless}}
   {{/if}}
