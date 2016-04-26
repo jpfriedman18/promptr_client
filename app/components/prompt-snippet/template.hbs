@@ -1,37 +1,37 @@
 <div class="prompt-snippet-container">
 
-{{#if isTeacher}}
+  {{#if isTeacher}}
 
-  {{#unless isEditable}}
-    <h5>Title: {{prompt.title}}</h5>
-    <p>Prompt: {{prompt.text}}</p>
-    {{#unless showResponses}}
-      <button class="btn btn-success btn-xs" {{action 'showResponses'}}>Show Responses</button>
-      <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
-      <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+    {{#unless isEditable}}
+      <h5>Title: {{prompt.title}}</h5>
+      <p>Prompt: {{prompt.text}}</p>
+      {{#unless showResponses}}
+        <button class="btn btn-success btn-xs" {{action 'showResponses'}}>Show Responses</button>
+        <button class="btn btn-info btn-xs" {{action 'toggleEditable'}}>Edit</button>
+        <button class="btn btn-danger btn-xs" {{action 'destroyPrompt'}}>Delete</button>
+      {{else}}
+        {{#each prompt.promptResponses as |eachPromptResponse|}}
+          {{prompt-response-snippet promptResponse=eachPromptResponse createEvaluation='createEvaluation'}}
+        {{/each}}
+        <button class="btn btn-secondary btn-xs" {{action 'showResponses'}}>Cancel</button>
+      {{/unless}}
     {{else}}
-      {{#each prompt.promptResponses as |eachPromptResponse|}}
-        {{prompt-response-snippet promptResponse=eachPromptResponse createEvaluation='createEvaluation'}}
-      {{/each}}
-      <button class="btn btn-secondary btn-xs" {{action 'showResponses'}}>Cancel</button>
+      <p>{{input value=prompt.title}}</p>
+      <p>{{input value=prompt.text}}</p>
+      <button class="btn btn-info btn-xs"{{action 'updatePrompt'}}>Submit Changes</button>
+      <button class="btn btn-secondary btn-xs" {{action 'toggleEditable'}}>Cancel</button>
     {{/unless}}
-  {{else}}
-    <p>{{input value=prompt.title}}</p>
-    <p>{{input value=prompt.text}}</p>
-    <button class="btn btn-info btn-xs"{{action 'updatePrompt'}}>Submit Changes</button>
-    <button class="btn btn-secondary btn-xs" {{action 'toggleEditable'}}>Cancel</button>
-  {{/unless}}
 
-{{else}}
-  <h5>Teacher: {{prompt.teacher.name}}</h5>
-  <p>Title: {{prompt.title}}</p>
-  <p>Prompt: {{prompt.text}}</p>
-  {{#unless responding}}
-    <button class="btn btn-info btn-xs" {{action 'toggleResponding'}}>Write a Response</button>
   {{else}}
-    {{prompt-response-form prompt=prompt createPromptResponse='createPromptResponse'}}
-    <button class="btn btn-secondary btn-xs" {{action 'toggleResponding'}}>Cancel</button>
-  {{/unless}}
-{{/if}}
+    <h5>Teacher: {{prompt.teacher.name}}</h5>
+    <p>Title: {{prompt.title}}</p>
+    <p>{{prompt.text}}</p>
+    {{#unless responding}}
+      <button class="btn btn-info btn-xs" {{action 'toggleResponding'}}>Write a Response</button>
+    {{else}}
+      {{prompt-response-form prompt=prompt createPromptResponse='createPromptResponse'}}
+      <button class="btn btn-secondary btn-xs" {{action 'toggleResponding'}} style="margin-top: 5px;">Cancel</button>
+    {{/unless}}
+  {{/if}}
 
 </div>
