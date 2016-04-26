@@ -14,11 +14,11 @@
 }
 
 .index {
-  text-align: center;
   background-image: url("https://s3.amazonaws.com/jamrs-bucket/books-education-school-literature-48126.jpeg");
   background-size: cover;
   background-position: center center;
   min-height: 675px;
+  text-align: center;
 }
 
 .index-content {
@@ -60,5 +60,6 @@
 .prompt-snippet-container {
   border: 3px solid black;
   border-radius: 10px;
+  padding: 10px;
   margin: 10px;
 }

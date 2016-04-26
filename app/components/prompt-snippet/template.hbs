@@ -3,7 +3,7 @@
 {{#if isTeacher}}
 
   {{#unless isEditable}}
-    <p>Title: {{prompt.title}}</p>
+    <h5>Title: {{prompt.title}}</h5>
     <p>Prompt: {{prompt.text}}</p>
     {{#unless showResponses}}
       <button class="btn btn-success btn-xs" {{action 'showResponses'}}>Show Responses</button>
@@ -23,7 +23,7 @@
   {{/unless}}
 
 {{else}}
-  <p>Teacher: {{prompt.teacher.name}}</p>
+  <h5>Teacher: {{prompt.teacher.name}}</h5>
   <p>Title: {{prompt.title}}</p>
   <p>Prompt: {{prompt.text}}</p>
   {{#unless responding}}
