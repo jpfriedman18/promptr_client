@@ -6,7 +6,7 @@
     <button class="btn btn-success btn-xs" {{action 'toggleEvaluating'}}>Evaluate</button>
   {{else}}
     {{evaluation-form promptResponse=promptResponse createEvaluation='createEvaluation'}}
-    <button class="btn btn-secondary btn-xs" {{action 'toggleEvaluating'}}>Cancel</button>
+    <button class="btn btn-secondary btn-xs" {{action 'toggleEvaluating'}} style="margin-top: 10px;">Cancel</button>
   {{/unless}}
 {{else}}
   <h5>{{promptResponse.prompt.title}}, for {{promptResponse.prompt.teacher.name}}</h5>
